@@ -12,11 +12,11 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     if post.checked
       post.update(checked: false)
-    begin
+    else
       post.update(checked: true)
-    end
-    
+    end  
     item = Post.find(params[:id])
     render json: { post: item }
   end
+
 end
